@@ -1,0 +1,22 @@
+Namit - Original Serial code
+Calling conv_forward_valid took 393.867milliseconds
+Calling average_pool took 10.5989milliseconds
+
+Namit - Parallel1 code
+Calling conv_forward_valid1 took 2274.55milliseconds
+1st conv
+  ydims[0]=10, ydims[1]=24, ydims[2]=24, ydims[3]=32
+  xdims[0]=10, xdims[1]=28, xdims[2]=28, xdims[3]=1
+  wdims[0]=5, wdims[1]=5, wdims[2]=1, wdims[3]=32
+Then sampling. Then 2nd convo
+  ydims[0]=10, ydims[1]=8, ydims[2]=8, ydims[3]=64
+  xdims[0]=10, xdims[1]=12, xdims[2]=12, xdims[3]=32
+  wdims[0]=5, wdims[1]=5, wdims[2]=32, wdims[3]=64
+
+
+Dec15 - 10,000 batches took 46 seconds. Didn’t use Remap. Used Zoe’s unroll
+	Remap_coalesced takes 140us for 1st convo and 55us for 2nd convo
+	Remap_non_coalesced takes 16us for 1st convo and 82us for 2nd convo
+
+
+	
